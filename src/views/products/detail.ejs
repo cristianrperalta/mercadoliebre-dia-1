@@ -2,6 +2,7 @@
 <html lang="es">
 <!-- Include Head -->
 <%- include('../partials/head', {title: product.name, image: product.image}) %>
+<script src="/js/addItem.js"  defer></script>
 <body>
 	<!-- Header -->
 	<%- include('../partials/headerNavbar') %>
@@ -60,11 +61,11 @@
 								<button type="submit" class="action-button delete">ELIMINAR</button>
 							</form>
 						<% } else { %>
-							<form action="/users/addToCart" method="POST" style="display: inline-bock">
+							<form action="/users/addToCart" method="POST" style="display: inline-bock" id="addToCartForm">
 								<label for="quantity" style="font-size: 14px;">Cantidad</label>
 								<input type="number" style="font-size: 14px;" id="quantity" name="quantity" value="1">
 								<p class="error"><%= typeof errors == 'undefined' ? '' : errors.quantity ? errors.quantity.msg : '' %></p>
-								<input type="hidden" name="productId" value="<%= product.id %>">
+								<input type="hidden" id="productId" name="productId" value="<%= product.id %>">
 								<button style="display: inline-block; width: 100%;" type="submit" class="mt-4 buy-now-button">AGREGAR AL CARRITO</button>
 							</form>
 							<hr>
@@ -79,6 +80,5 @@
 	<!-- footer -->
 	<%- include('../partials/footer') %>
 	<!-- /footer -->
-
 </body>	
 </html>

@@ -22,7 +22,7 @@ module.exports = {
                     meta : {
                         status : 200,
                         total: resultado.length,
-                        url: '/api/products'
+                        url: '/api/products/latest'
                     },
                     data : resultado
                 }
@@ -49,7 +49,7 @@ module.exports = {
                     meta : {
                         status : 200,
                         total: resultado.length,
-                        url: '/api/products'
+                        url: '/api/products/offers'
                     },
                     data : resultado
                 }
